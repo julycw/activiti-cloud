@@ -138,7 +138,7 @@ public class ToCloudProcessRuntimeEventConverter {
     }
 
     public CloudProcessCancelledEvent from(ProcessCancelledEvent event) {
-        CloudProcessCancelledEventImpl cloudEvent = new CloudProcessCancelledEventImpl(event.getEntity());
+        CloudProcessCancelledEventImpl cloudEvent = new CloudProcessCancelledEventImpl(event.getEntity(), event.getCause());
         runtimeBundleInfoAppender.appendRuntimeBundleInfoTo(cloudEvent);
         return cloudEvent;
     }
